@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="siteTitle"></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        header .site-title-container {
+            background-color: #212529;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header .site-title-container h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        nav {
+            background-color: #ffffff;
+            padding: 12px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .lang-button {
+            background-color: #f1f3f5;
+            border: 1px solid #dee2e6;
+            color: #495057;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        .lang-button:hover, .lang-button.active {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        .lang-button.active {
+            font-weight: bold;
+            color: #007bff;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .game-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            display: flex;
+            overflow: hidden;
+            min-height: 120px; /* Ensure card has some height even if content is sparse */
+        }
+        .game-preview {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-right: 1px solid #eee;
+            background-color: #e0e0e0; /* Placeholder background for image area */
+        }
+        .game-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+        .game-info h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            color: #333;
+            min-height: 1.4em; /* Placeholder height */
+        }
+        .game-info p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.5;
+            flex-grow: 1;
+            min-height: 3em; /* Placeholder height for description */
+        }
+        .game-link-button {
+            display: inline-block;
+            background-color: white;
+            border: 1px solid #ced4da;
+            color: #495057;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            align-self: flex-start;
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        .game-link-button:hover {
+            background-color: #f8f9fa;
+            border-color: #adb5bd;
+            color: #495057;
+        }
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            color: #6c757d;
+            font-size: 0.9em;
+            border-top: 1px solid #e9ecef;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="site-title-container">
+            <h1 data-lang-key="siteTitleText"></h1>
+        </div>
+        <nav>
+            <button class="lang-button" data-lang="zh-CN">中文</button>
+            <button class="lang-button" data-lang="en-US">English</button>
+            <!-- Add more language buttons as needed -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Game Card Template (Repeat 13 times) -->
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/escape-from-pizzeria_16x9/20250603063908/escape-from-pizzeria_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview"> <!-- src and alt are empty -->
+            <div class="game-info">
+                <h3 data-lang-key="game1Title"></h3>
+                <p data-lang-key="game1Desc"></p>
+                <a href="game1.html" class="game-link-button" data-lang-key="game1Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-pull-a-sword_16x9/20250221101903/obby-pull-a-sword_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game2Title"></h3>
+                <p data-lang-key="game2Desc"></p>
+                <a href="game2.html" class="game-link-button" data-lang-key="game2Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/doors-castle_16x9/20250423020906/doors-castle_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game3Title"></h3>
+                <p data-lang-key="game3Desc"></p>
+                <a href="game3.html" class="game-link-button" data-lang-key="game3Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-boxer_16x9/20250430035855/obby-boxer_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game4Title"></h3>
+                <p data-lang-key="game4Desc"></p>
+                <a href="game4.html" class="game-link-button" data-lang-key="game4Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/race-clicker-tap-tap-game_16x9/20250227030344/race-clicker-tap-tap-game_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game5Title"></h3>
+                <p data-lang-key="game5Desc"></p>
+                <a href="game5.html" class="game-link-button" data-lang-key="game5Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/mega-parkour-obby-escape-run_16x9/20250416064531/mega-parkour-obby-escape-run_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game6Title"></h3>
+                <p data-lang-key="game6Desc"></p>
+                <a href="game6.html" class="game-link-button" data-lang-key="game6Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/battle-of-knights-robby-and-dragons_16x9/20241204100639/battle-of-knights-robby-and-dragons_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game7Title"></h3>
+                <p data-lang-key="game7Desc"></p>
+                <a href="game7.html" class="game-link-button" data-lang-key="game7Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-cards-the-legend-hunt_16x9/20250422044823/obby-cards-the-legend-hunt_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game8Title"></h3>
+                <p data-lang-key="game8Desc"></p>
+                <a href="game8.html" class="game-link-button" data-lang-key="game8Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-tame-the-legendary-dragon_16x9/20241218034006/obby-tame-the-legendary-dragon_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game9Title"></h3>
+                <p data-lang-key="game9Desc"></p>
+                <a href="game9.html" class="game-link-button" data-lang-key="game9Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-parkour-race_16x9/20250224074629/obby-parkour-race_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game10Title"></h3>
+                <p data-lang-key="game10Desc"></p>
+                <a href="game10.html" class="game-link-button" data-lang-key="game10Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-dumb-or-genius-iq-test_16x9/20250303073714/obby-dumb-or-genius-iq-test_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game11Title"></h3>
+                <p data-lang-key="game11Desc"></p>
+                <a href="game11.html" class="game-link-button" data-lang-key="game11Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/playblox-io_16x9/20250421050546/playblox-io_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game12Title"></h3>
+                <p data-lang-key="game12Desc"></p>
+                <a href="game12.html" class="game-link-button" data-lang-key="game12Button"></a>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://imgs.crazygames.com/obby-the-royal-race_16x9/20241218063636/obby-the-royal-race_16x9-cover?metadata=none&quality=85&width=273&fit=crop" alt="" class="game-preview">
+            <div class="game-info">
+                <h3 data-lang-key="game13Title"></h3>
+                <p data-lang-key="game13Desc"></p>
+                <a href="game13.html" class="game-link-button" data-lang-key="game13Button"></a>
+            </div>
+        </div>
+        <!-- End of Game Card Template -->
+    </main>
+
+    <footer>
+        <p data-lang-key="footerText"></p>
+    </footer>
+
+    <script>
+        const translations = {
+            "zh-CN": {
+                siteTitleText: "roblox game", // Placeholder, will be set by JS
+                game1Title: "Escape From Pizzeria", game1Desc: "Escape From Pizzeria is a adventure game where you’re trapped inside a dark, eerie restaurant with secrets lurking in every corner. You’ll navigate creepy hallways, dodge traps, and uncover clues to escape. Stay alert, think fast, and whatever you do, don’t let the chef catch you snooping around his haunted kitchen.", game1Button: "play",
+                game2Title: "Obby: Pull a Sword", game2Desc: "Obby: Pull a Sword is an action-packed clicker incremental game where you train to build strength and draw powerful swords. Face off against mighty bosses, unlock new abilities, and collect unique pets along the way. Each victory brings you closer to becoming the ultimate warrior. Can you master the challenge and prove your strength?", game2Button: "play",
+                game3Title: "Doors Castle", game3Desc: "Doors Castle is a thrilling adventure through a haunted fortress filled with secrets, puzzles, and lurking horrors. Every shadow hides danger, every door holds a mystery. Explore eerie hallways, uncover hidden paths, and stay one step ahead of the creatures stalking the dark.", game3Button: "play",
+                game4Title: "Obby: Boxer", game4Desc: "Obby: Boxer is a casual idle game where you help Obby punch through walls and escape confinement with sheer force. Strengthen his abilities, collect pets, unlock over 30 powerful gauntlets, and explore vibrant new locations. Customize Obby with unique skins and effects, spin for rewards, and rise through the ranks as you smash every barrier.", game4Button: "play",
+                game5Title: "Race Clicker: Tap Tap Game", game5Desc: "Race Clicker: Tap Tap Game is a clicker game with a thrilling racing experience that challenges your speed, agility, and strategy. Control your runner with a single tap through intricate tracks and obstacles. Train your character to enhance muscle, speed, and endurance, unlocking new skills and items. Master quick reactions and strategic speed usage to outpace opponents and claim victory. With stunning scenery and varied terrain, find the balance between speed and endurance to become the ultimate race champion.", game5Button: "play",
+                game6Title: "Mega Parkour: Obby Escape Run", game6Desc: "Mega Parkour: Obby Escape Run is a fast-paced obstacle course adventure that throws you into high-stakes jumps, tricky climbs, and daring escapes. You’ll race through wild maps—from rooftops to prison towers—testing your reflexes and timing at every turn. Stay sharp, move fast, and prove you’ve got what it takes to conquer each course!", game6Button: "play",
+                game7Title: "Battle of Knights: Robby and Dragons", game7Desc: "Battle of Knights: Robby and Dragons is an engaging clicker game where you train your hero to grow stronger and defeat fierce enemies. Wield your sword and team up with companions to face thrilling battles. Strengthen your skills and overcome every challenge in your journey to victory!", game7Button: "play",
+                game8Title: "Obby Cards: The Legend Hunt", game8Desc: "Obby Cards: The Legend Hunt is a battle game where you collect powerful fighter cards, build an unbeatable team, and dominate epic PvP battles and boss arenas. Perfect for fans of Roblox-style gameplay and anime action, this game lets you dive into fast-paced card collecting and strategic combat.", game8Button: "play",
+                game9Title: "Obby: Legendary Dragon", game9Desc: "Obby: Legendary Dragon is a thrilling adventure battle game where you are on an epic quest to capture extraordinary creatures across fantastical worlds. Run through from enchanted forests to mystical mountains, each brimming with hundreds of stunning animals just waiting to be discovered. Get ready to hone your skills and grow your creatures through countless levels. With each step, you’ll forge friendships with fellow adventurers and uncover delightful surprises.", game9Button: "play",
+                game10Title: "Obby Parkour Race: Multiplayer", game10Desc: "Obby Parkour Race: Multiplayer is a thrilling parkour competition where you race against others to conquer challenging obstacle courses. Leap, climb, and balance your way through tricky paths while mastering clever tricks to outpace your rivals. Stay focused and agile as you race toward victory in this fast-paced test of skill and speed!", game10Button: "play",
+                game11Title: "Obby: Dumb or Genius IQ Test", game11Desc: "Obby: Dumb or Genius IQ Test is a game where intelligence is everything! Boost your IQ by completing mini-games, taking on challenges, and battling in PvP duels. Collect IQ points from the map, win games for extra rewards, and try your luck on the wheel of fortune for bonus IQ! Compete against other players, earn cups, and exchange them for pets. The higher your IQ, the better your status. Climb the leaderboard and prove you’re the smartest player in the game!", game11Button: "play",
+                game12Title: "PlayBlox.io", game12Desc: "PlayBlox.io is a vibrant online multiplayer Obby game packed with over 100 handcrafted parkour levels and stylized, Roblox-inspired visuals. Jump into a colorful world full of tricky platforms, creative obstacles, and competitive fun as you race your way to the legendary island of gods.Challenge your reflexes, climb the leaderboards, and express yourself with tons of customization options.", game12Button: "play",
+                game13Title: "Obby: The Royal Race", game13Desc: "Obby: The Royal Race is an adventure game where players can spend hours customizing and upgrading their Obby character, collecting cool cars, and tackling challenging parkour courses. The game offers an exciting mix of racing, platforming, and character progression, making it a thrilling experience for players who enjoy both speed and skill-based challenges. So get ready to rev your engines, upgrade your character, and take on the parkour challenges in this action-packed game!", game13Button: "play",
+                footerText: " @2025  roblox game."
+            },
+            "en-US": {
+                siteTitleText: "roblox game", // Placeholder, will be set by JS
+                game1Title: "Escape From Pizzeria", game1Desc: "Escape From Pizzeria is a adventure game where you’re trapped inside a dark, eerie restaurant with secrets lurking in every corner. You’ll navigate creepy hallways, dodge traps, and uncover clues to escape. Stay alert, think fast, and whatever you do, don’t let the chef catch you snooping around his haunted kitchen.", game1Button: "play",
+                game2Title: "Obby: Pull a Sword", game2Desc: "Obby: Pull a Sword is an action-packed clicker incremental game where you train to build strength and draw powerful swords. Face off against mighty bosses, unlock new abilities, and collect unique pets along the way. Each victory brings you closer to becoming the ultimate warrior. Can you master the challenge and prove your strength?", game2Button: "play",
+                game3Title: "Doors Castle", game3Desc: "Doors Castle is a thrilling adventure through a haunted fortress filled with secrets, puzzles, and lurking horrors. Every shadow hides danger, every door holds a mystery. Explore eerie hallways, uncover hidden paths, and stay one step ahead of the creatures stalking the dark.", game3Button: "play",
+                game4Title: "Obby: Boxer", game4Desc: "Obby: Boxer is a casual idle game where you help Obby punch through walls and escape confinement with sheer force. Strengthen his abilities, collect pets, unlock over 30 powerful gauntlets, and explore vibrant new locations. Customize Obby with unique skins and effects, spin for rewards, and rise through the ranks as you smash every barrier.", game4Button: "play",
+                game5Title: "Race Clicker: Tap Tap Game", game5Desc: "Race Clicker: Tap Tap Game is a clicker game with a thrilling racing experience that challenges your speed, agility, and strategy. Control your runner with a single tap through intricate tracks and obstacles. Train your character to enhance muscle, speed, and endurance, unlocking new skills and items. Master quick reactions and strategic speed usage to outpace opponents and claim victory. With stunning scenery and varied terrain, find the balance between speed and endurance to become the ultimate race champion.", game5Button: "play",
+                game6Title: "Mega Parkour: Obby Escape Run", game6Desc: "Mega Parkour: Obby Escape Run is a fast-paced obstacle course adventure that throws you into high-stakes jumps, tricky climbs, and daring escapes. You’ll race through wild maps—from rooftops to prison towers—testing your reflexes and timing at every turn. Stay sharp, move fast, and prove you’ve got what it takes to conquer each course!", game6Button: "play",
+                game7Title: "Battle of Knights: Robby and Dragons", game7Desc: "Battle of Knights: Robby and Dragons is an engaging clicker game where you train your hero to grow stronger and defeat fierce enemies. Wield your sword and team up with companions to face thrilling battles. Strengthen your skills and overcome every challenge in your journey to victory!", game7Button: "play",
+                game8Title: "Obby Cards: The Legend Hunt", game8Desc: "Obby Cards: The Legend Hunt is a battle game where you collect powerful fighter cards, build an unbeatable team, and dominate epic PvP battles and boss arenas. Perfect for fans of Roblox-style gameplay and anime action, this game lets you dive into fast-paced card collecting and strategic combat.", game8Button: "play",
+                game9Title: "Obby: Legendary Dragon", game9Desc: "Obby: Legendary Dragon is a thrilling adventure battle game where you are on an epic quest to capture extraordinary creatures across fantastical worlds. Run through from enchanted forests to mystical mountains, each brimming with hundreds of stunning animals just waiting to be discovered. Get ready to hone your skills and grow your creatures through countless levels. With each step, you’ll forge friendships with fellow adventurers and uncover delightful surprises.", game9Button: "play",
+                game10Title: "Obby Parkour Race: Multiplayer", game10Desc: "Obby Parkour Race: Multiplayer is a thrilling parkour competition where you race against others to conquer challenging obstacle courses. Leap, climb, and balance your way through tricky paths while mastering clever tricks to outpace your rivals. Stay focused and agile as you race toward victory in this fast-paced test of skill and speed!", game10Button: "play",
+                game11Title: "Obby: Dumb or Genius IQ Test", game11Desc: "Obby: Dumb or Genius IQ Test is a game where intelligence is everything! Boost your IQ by completing mini-games, taking on challenges, and battling in PvP duels. Collect IQ points from the map, win games for extra rewards, and try your luck on the wheel of fortune for bonus IQ! Compete against other players, earn cups, and exchange them for pets. The higher your IQ, the better your status. Climb the leaderboard and prove you’re the smartest player in the game!", game11Button: "play",
+                game12Title: "PlayBlox.io", game12Desc: "PlayBlox.io is a vibrant online multiplayer Obby game packed with over 100 handcrafted parkour levels and stylized, Roblox-inspired visuals. Jump into a colorful world full of tricky platforms, creative obstacles, and competitive fun as you race your way to the legendary island of gods.Challenge your reflexes, climb the leaderboards, and express yourself with tons of customization options.", game12Button: "play",
+                game13Title: "Obby: The Royal Race", game13Desc: "Obby: The Royal Race is an adventure game where players can spend hours customizing and upgrading their Obby character, collecting cool cars, and tackling challenging parkour courses. The game offers an exciting mix of racing, platforming, and character progression, making it a thrilling experience for players who enjoy both speed and skill-based challenges. So get ready to rev your engines, upgrade your character, and take on the parkour challenges in this action-packed game!", game13Button: "play",
+                footerText: " @2025  roblox game."
+            }
+            // Add more languages here with empty strings for keys
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            const siteTitleElement = document.getElementById('siteTitle');
+            if (siteTitleElement && translations[lang] && translations[lang].siteTitleText !== undefined) {
+                document.title = translations[lang].siteTitleText || "roblox game"; // Fallback title
+            } else {
+                 document.title = "roblox game"; // Default if not found
+            }
+
+
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key] !== undefined) { // Check if key exists
+                    element.textContent = translations[lang][key];
+                } else {
+                    // Keep existing HTML content or clear it if you prefer
+                    // element.textContent = ''; // Option to clear if key not found
+                    console.warn(`Translation key "${key}" not found for language "${lang}". Element content unchanged.`);
+                }
+            });
+
+            document.querySelectorAll('.lang-button').forEach(button => {
+                if (button.getAttribute('data-lang') === lang) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const langButtons = document.querySelectorAll('.lang-button');
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const lang = button.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+
+            // Set initial placeholders based on default language
+            const initialLang = localStorage.getItem('preferredLang') || 'zh-CN';
+            // Manually set default placeholder text for the first load if translations are empty
+            if (!document.querySelector('[data-lang-key="siteTitleText"]').textContent) {
+                 document.querySelector('[data-lang-key="siteTitleText"]').textContent = "roblox game";
+            }
+            document.querySelectorAll('.game-info h3').forEach((el, index) => {
+                if(!el.textContent) el.textContent = `游戏 ${index + 1} 标题`;
+            });
+            document.querySelectorAll('.game-info p').forEach((el, index) => {
+                if(!el.textContent) el.textContent = `这里是游戏 ${index + 1} 的描述占位符。`;
+            });
+            document.querySelectorAll('.game-link-button').forEach((el, index) => {
+                if(!el.textContent) el.textContent = `玩游戏 ${index + 1}`;
+            });
+             if(!document.querySelector('[data-lang-key="footerText"]').textContent) {
+                document.querySelector('[data-lang-key="footerText"]').textContent = "版权信息占位符";
+            }
+
+            setLanguage(initialLang); // Apply translations (which are mostly empty now)
+        });
+    </script>
+</body>
+</html>

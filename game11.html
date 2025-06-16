@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[游戏名称] - roblox game</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .top-header {
+            background-color: #212529; /* 深色背景 */
+            padding: 10px 20px;
+            text-align: center; /* 或者左对齐: text-align: left; */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .home-button {
+            color: #ffffff; /* 白色文字 */
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .home-button:hover {
+            background-color: #495057; /* 鼠标悬停背景色 */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .game-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: #444;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive iframe container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid #ddd; /* Optional border for the iframe area */
+            border-radius: 8px; /* Optional */
+            background-color: #000; /* Fallback background if iframe fails to load */
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gameplay-intro p {
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .gameplay-intro ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        .gameplay-intro li {
+            margin-bottom: 5px;
+        }
+
+        .navigation-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6c757d; /* 返回按钮颜色 */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <a href="http://www.robloxgame.top" class="home-button" target="_blank">www.robloxgame.top</a>
+    </header>
+
+    <div class="container">
+        <h1 class="game-title">Obby: Dumb or Genius IQ Test</h1>
+
+        <section class="section game-embed">
+            <h2>game</h2>
+            <div class="iframe-container">
+                <!-- 
+                    将下面的 src 替换为您的 Roblox 游戏嵌入链接。
+                    确保您的游戏或Roblox平台支持嵌入。
+                    Roblox 游戏通常不能简单地通过 iframe 嵌入到第三方网站进行游玩，
+                    这里更可能是嵌入游戏相关的视频、预览或社区页面。
+                    如果确实是游戏本身，请确保链接正确且允许嵌入。
+                -->
+                <iframe src="https://www.crazygames.com/embed/obby-dumb-or-genius-iq-test" style="width: 100%; height: 100%;" frameborder="0" allow="gamepad *;"></iframe>
+            </section>
+
+        <section class="section gameplay-intro">
+            <h2>Controls</h2>
+            <p>WASD = move
+                Space = jump
+                V = pets menu
+                C = tasks menu
+                P = settings
+                Tab = show / hide mouse cursor
+                Left-click = interact with in-game buttons / play the mini-games</p>
+        </section>
+
+        <div class="navigation-links">
+            <a href="index.html" class="back-button">go index</a>
+            <!-- 如果您想直接链接到Roblox上的游戏页面，可以添加类似下面的按钮 -->
+            <!--
+            <a href="[您的ROBLOX游戏实际链接]" class="back-button" target="_blank" style="background-color: #007bff; margin-left:10px;">
+                在 Roblox 上玩
+            </a>
+            -->
+        </div>
+    </div>
+
+</body>
+</html>
